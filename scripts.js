@@ -149,7 +149,7 @@ function showTime() {
     var time = h + ":" + m + " " + session;
     document.getElementById("clock").innerText = time;
 
-    setInterval(showTime, 1000);
+    setTimeout(showTime, 1000);
 
 }
 
