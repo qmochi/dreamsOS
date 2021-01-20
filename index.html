@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>dreams.OS v20.2.1</title>
+    <meta name="author" content="Corbin Quan">
+    <meta name="description" content="Virtual, interactive portfolio/business card/mood board.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<iframe src="assets/sounds/silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+
+<audio id="startup">
+    <source src="assets/sounds/Windows_95_Startup.mp3" type="audio/mp3">
+</audio>
+
+<body onload="splash()">
+    <div id="load">
+        <img src="assets/sprites/Windows logo-2.png">
+        <h3>loading dreams.OS v20.2.1...</h3>
+    </div>
+
+
+    <div id="wallpaper" onmousedown="unhighlight()"></div>
+
+    <div id="desktop">
+        <a class="icon" id="myComputer" onmousedown="highlight('myComputer')" ondblclick="launch('window1')">
+            <img src="assets/sprites/My Computer-1.png">
+            <p>My Computer</p>
+        </a>
+
+        <div class="icon" id="folder" onmousedown="highlight('folder')" ondblclick="launch('window2')">
+            <img src="assets/sprites/Folder-1.png">
+            <p>stuff</p>
+        </div>
+
+        <div class="window" id="window1" onclick="front('window1')">
+            <p>opened my computer</p>
+        </div>
+
+        <div class="window" id="window2" onclick="front('window2')">
+            <p>opened folder</p>
+        </div>
+    </div>
+
+    <div id="taskbar">
+        <div class="button" id="start" onmousedown="indent('start')">
+            <img src="assets/sprites/Windows logo-2.png">
+            <p>Start</p>
+
+            <div id="startMenu" class="dropdown">
+                <a href="#">Item 1</a>
+                <a href="#">Item 2</a>
+                <a href="#">Item 3</a>
+                <a href="#">Item 4</a>
+                <a href="#">Item 5</a>
+                <a href="#">Item 6</a>
+                <hr style="width: 99%;height: 1px;margin: 1% 0 1%;">
+                <a href="index.html">
+                    <img src="assets/sprites/power.png">Reboot</a>
+            </div>
+        </div>
+
+        <div class="panel" onload="showTime()">
+            <p id="clock">00:00 XX</p>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+
+    <!-- if you're reading this, i've figured out git -->
+
+</body>
+
+</html>

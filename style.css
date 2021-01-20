@@ -1,0 +1,235 @@
+:root {
+    --bg-color: #018281;
+    --gray-color: #acb6b8;
+    --dark-gray: #8a8e96;
+    --vapor-gradient: linear-gradient(88deg, rgba(190, 233, 242, 1) 0%, rgba(113, 164, 210, 1) 39%, rgba(225, 83, 152, 1) 100%);
+    --taskbar-height: 35px;
+    --line-width: 3px;
+}
+
+body {
+    width: 800px;
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family: w95;
+    font-smooth: never;
+    image-rendering: pixelated;
+    -webkit-font-smoothing: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -o-user-select: none;
+}
+
+#load {
+    background-color: var(--bg-color);
+    width: 800px;
+    height: 600px;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    z-index: 100;
+}
+
+#load img {
+    image-rendering: pixelated;
+    width: 20%;
+    justify-self: center;
+    align-self: center;
+}
+
+#wallpaper {
+    width: 800px;
+    height: 600px;
+    background: var(--vapor-gradient);
+    position: absolute;
+    z-index: 0;
+}
+
+#desktop {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.icon,
+.iconHighlighted {
+    width: 69px;
+    height: 32px;
+    margin: 1% 0% 0%;
+    padding: 3% 1% 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+}
+
+.icon {
+    background: none;
+    mix-blend-mode: normal;
+    color: #000000;
+}
+
+.iconHighlighted {
+    background: blue;
+    mix-blend-mode: darken;
+    color: #ffffff;
+}
+
+.icon img {
+    max-width: 32px;
+    align-self: center;
+}
+
+.icon p {
+    font-family: w95;
+    font-size: 9pt;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+#taskbar {
+    background: var(--gray-color);
+    display: flex;
+    outline: #ffffff;
+    outline-style: solid;
+    outline-width: var(--line-width);
+    height: var(--taskbar-height);
+    position: relative;
+    bottom: var(--taskbar-height);
+    z-index: 3;
+}
+
+.button,
+.buttonPressed {
+    border-style: solid;
+    border-width: var(--line-width);
+    width: 200px;
+    margin: 0.2%;
+    padding: 0 0.5% 0;
+    display: flex;
+}
+
+.button {
+    background: var(--gray-color);
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+    border-bottom-color: #000000;
+    border-right-color: #000000;
+}
+
+.buttonPressed {
+    background: #e6e6e6;
+    border-top-color: #000000;
+    border-left-color: #000000;
+    border-bottom-color: #ffffff;
+    border-right-color: #ffffff;
+}
+
+.button img {
+    max-height: 100%;
+    width: auto;
+}
+
+#start {
+    width: auto;
+}
+
+#start p {
+    font-weight: bolder;
+    align-self: center;
+    font-size: 10pt;
+    margin-left: 10%;
+}
+
+#startMenu {
+    width: 200px;
+    bottom: var(--taskbar-height);
+    z-index: 6;
+}
+
+.panel {
+    height: 75%;
+    display: flex;
+    position: absolute;
+    right: 2px;
+    align-self: center;
+    border-style: solid;
+    border-width: 2px;
+    border-top-color: var(--dark-gray);
+    border-left-color: var(--dark-gray);
+    border-bottom-color: #ffffff;
+    border-right-color: #ffffff;
+    padding: 0 2% 0;
+    font-size: 10pt;
+}
+
+.panel p {
+    align-self: center;
+}
+
+.dropdown {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: var(--gray-color);
+    border-width: var(--line-width);
+    border-style: solid;
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+    border-bottom-color: #000000;
+    border-right-color: #000000;
+}
+
+.dropdown a {
+    color: #000000;
+    font-size: 10pt;
+    text-decoration: none;
+    padding: 8%;
+}
+
+.dropdown a:hover {
+    background: blue;
+    color: #ffffff;
+}
+
+.show {
+    display: flex;
+}
+
+.window {
+    display: none;
+    position: absolute;
+    width: 480px;
+    height: 360px;
+    background: var(--gray-color);
+    border-width: var(--line-width);
+    border-style: solid;
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+    border-bottom-color: #000000;
+    border-right-color: #000000;
+}
+
+#window1 {
+    top: 5%;
+    left: 12%;
+}
+
+#window2 {
+    top: 12%;
+    left: 18%;
+}
+
+@font-face {
+    font-family: w95;
+    src: url(assets/fonts/MS\ Sans\ Serif.ttf)
+}
