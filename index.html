@@ -28,12 +28,12 @@
     <div id="wallpaper" onmousedown="unhighlight()"></div>
 
     <div id="desktop">
-        <a class="icon" id="myComputer" onmousedown="highlight('myComputer')" ondblclick="launch('window1')">
+        <a class="icon" id="myComputer" onmousedown="highlight('myComputer')" ondblclick="launch('window1'); front('window1')">
             <img src="assets/sprites/My Computer-1.png">
             <p>My Computer</p>
         </a>
 
-        <div class="icon" id="folder" onmousedown="highlight('folder')" ondblclick="launch('window2')">
+        <div class="icon" id="folder" onmousedown="highlight('folder')" ondblclick="launch('window2'); front('window2')">
             <img src="assets/sprites/Folder-1.png">
             <p>stuff</p>
         </div>
@@ -48,20 +48,19 @@
     </div>
 
     <div id="taskbar">
-        <div class="button" id="start" onmousedown="indent('start')">
+        <div class="button" id="start" onclick="indent('start')">
             <img src="assets/sprites/Windows logo-2.png">
             <p>Start</p>
 
-            <div id="startMenu" class="dropdown">
-                <a href="#">Item 1</a>
-                <a href="#">Item 2</a>
-                <a href="#">Item 3</a>
-                <a href="#">Item 4</a>
-                <a href="#">Item 5</a>
-                <a href="#">Item 6</a>
+            <div class="dropdown" id="startMenu">
+                <a href="#"><img src="assets/sprites/Program-1.png">Item 1</a>
+                <a href="#"><img src="assets/sprites/Folder-1.png">Item 2</a>
+                <a href="#"><img src="assets/sprites/My Computer-1.png">Item 3</a>
+                <a href="#"><img src="assets/sprites/floral-shoppe.png">Item 4</a>
+                <a href="#"><img src="assets/sprites/floral-shoppe_mono.png">Item 5</a>
+                <a href="#"><img src="assets/sprites/Folder-1.png">Item 6</a>
                 <hr style="width: 99%;height: 1px;margin: 1% 0 1%;">
-                <a href="index.html">
-                    <img src="assets/sprites/power.png">Reboot</a>
+                <a href="index.html"><img src="assets/sprites/power.png">Reboot</a>
             </div>
         </div>
 

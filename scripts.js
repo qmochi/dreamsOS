@@ -14,22 +14,30 @@ function splash() {
 // highlights icons in blue when clicked on 
 function highlight(id) {
     var x = document.getElementsByClassName('icon');
+    var y = document.getElementsByClassName('button');
     var i;
     for (i = 0; i < x.length; i++) {
         x[i].classList.remove('iconHighlighted');
     }
+    var o;
+    for (o = 0; o < y.length; o++) {
+        y[o].classList.remove('buttonPressed');
+    }
     document.getElementById(id).classList.toggle('iconHighlighted');
+    document.getElementById('startMenu').classList.remove('show');
 }
 
 // removes focus from windows and taskbar buttons when desktop is clicked
 function unhighlight() {
+    var x = document.getElementsByClassName('icon');
+    var y = document.getElementsByClassName('button');
     var i;
-    for (i = 0; i < document.getElementsByClassName('icon').length; i++) {
-        document.getElementsByClassName('icon')[i].classList.remove('iconHighlighted');
+    for (i = 0; i < x.length; i++) {
+        x[i].classList.remove('iconHighlighted');
     }
     var o;
-    for (o = 0; o < document.getElementsByClassName('button').length; o++) {
-        document.getElementsByClassName('button')[o].classList.remove('buttonPressed');
+    for (o = 0; o < y.length; o++) {
+        y[o].classList.remove('buttonPressed');
     }
     document.getElementById('startMenu').classList.remove('show');
 }
@@ -50,7 +58,7 @@ function indent(id) {
 function launch(id) {
     var x = document.getElementById(id);
     if (x.style.display === "block") {
-        x.style.display = "none";
+        x.style.zIndex = 1;
     } else {
         x.style.display = "block";
     }
@@ -64,6 +72,9 @@ function front(id) {
         x[i].style.zIndex = 1;
     }
     document.getElementById(id).style.zIndex = 2;
+
+    document.getElementById('start').classList.remove('buttonPressed');
+    document.getElementById('startMenu').classList.remove('show');
 }
 
 // allows for dragging windows around
