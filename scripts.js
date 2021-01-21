@@ -105,9 +105,9 @@ function front(id) {
 function show(id) {
     var x = document.getElementById(id);
     if (x.style.display === "flex") {
-        if (x.style.zIndex < 2) {
+        if (x.style.zIndex === 2) {
             x.style.display = "none";
-        } else {
+        } else if (x.style.zIndex < 2) {
             front(id);
         }
     } else {
@@ -162,7 +162,10 @@ function show(id) {
 //     }
 // }
 
-var dragItem = document.querySelector(".window");
+var dragItem = document.getElementsByClassName(".window");
+for (var i = 0; i < dragItem.length; i++) {
+    var windows = dragItem[i];
+}
 var container = document.querySelector("#wallpaper");
 
 var active = false;
@@ -190,7 +193,7 @@ function dragStart(e) {
         initialY = e.clientY - yOffset;
     }
 
-    if (e.target === dragItem) {
+    if (e.target === windows) {
         active = true;
     }
 }

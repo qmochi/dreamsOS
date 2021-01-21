@@ -1,7 +1,8 @@
 :root {
     --bg-color: #018281;
-    --gray-color: #acb6b8;
+    --gray-color: #b3acb8;
     --dark-gray: #8a8e96;
+    --highlight-color: #1ba6ac;
     --vapor-gradient: linear-gradient(88deg, rgba(190, 233, 242, 1) 0%, rgba(113, 164, 210, 1) 39%, rgba(225, 83, 152, 1) 100%);
     --taskbar-height: 35px;
     --line-width: 3px;
@@ -73,7 +74,7 @@ body {
 }
 
 .iconHighlighted {
-    background: blue;
+    background: var(--highlight-color);
     mix-blend-mode: darken;
     color: #ffffff;
 }
@@ -144,7 +145,7 @@ body {
 
 #start p {
     font-weight: bolder;
-    margin-left: 10%;
+    margin: 0 0 0 10%;
 }
 
 #startMenu {
@@ -186,15 +187,18 @@ body {
     border-right-color: #000000;
 }
 
-.dropdown a {
+.dropdown a,
+.dropdown p {
     color: #000000;
     font-size: 9pt;
     text-decoration: none;
+    margin: 0;
     padding: 8%;
 }
 
-.dropdown a:hover {
-    background: blue;
+.dropdown a:hover,
+.dropdown p:hover {
+    background: var(--highlight-color);
     color: #ffffff;
 }
 
@@ -230,9 +234,6 @@ body {
 #taskbar2 {
     display: none;
 }
-
-
-/* for some reason this sheet isn't up to date on Github Pages */
 
 .visible {
     display: flex;

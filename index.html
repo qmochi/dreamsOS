@@ -15,18 +15,12 @@
 <iframe src="assets/sounds/silence.mp3" allow="autoplay" style="display: none"></iframe>
 
 <audio id="startup" preload="auto" src="assets/sounds/Windows_95_Startup.mp3" type="audio/mp3"></audio>
-
-<audio id="been" preload="auto" src="assets/sounds/Been Thinking About It.mp3" type="audio/mp3"></audio>
-
-<audio id="dolphins" preload="auto" src="assets/sounds/dolphins.mp3" type="audio/mp3"></audio>
-
-<audio id="ecco" preload="auto" src="assets/sounds/ECCOと悪寒ダイビング.mp3" type="audio/mp3"></audio>
-
-<audio id="girl" preload="auto" src="assets/sounds/Girl.mp3" type="audio/mp3"></audio>
-
-<audio id="plastic" preload="auto" src="assets/sounds/Plastic Love.mp3" type="audio/mp3"></audio>
-
-<audio id="toon" preload="auto" src="assets/sounds/Toon World.mp3" type="audio/mp3"></audio>
+<audio id="been" loop preload="auto" src="assets/sounds/Been Thinking About It.mp3" type="audio/mp3"></audio>
+<audio id="dolphins" loop preload="auto" src="assets/sounds/dolphins.mp3" type="audio/mp3"></audio>
+<audio id="ecco" loop preload="auto" src="assets/sounds/ECCOと悪寒ダイビング.mp3" type="audio/mp3"></audio>
+<audio id="girl" loop preload="auto" src="assets/sounds/Girl.mp3" type="audio/mp3"></audio>
+<audio id="plastic" loop preload="auto" src="assets/sounds/Plastic Love.mp3" type="audio/mp3"></audio>
+<audio id="toon" loop preload="auto" src="assets/sounds/Toon World.mp3" type="audio/mp3"></audio>
 
 <body onload="splash()">
     <div id="load">
@@ -60,17 +54,17 @@
         <div class="button" id="start" onclick="indent('start'); show('startMenu')">
             <img src="assets/sprites/Windows logo-2.png">
             <p>Start</p>
+        </div>
 
-            <div class="dropdown" id="startMenu">
-                <a href="#"><img src="assets/sprites/Program-1.png">Item 1</a>
-                <a href="#"><img src="assets/sprites/Folder-1.png">Item 2</a>
-                <a href="#"><img src="assets/sprites/My Computer-1.png">Item 3</a>
-                <a href="#"><img src="assets/sprites/floral-shoppe.png">Item 4</a>
-                <a href="#"><img src="assets/sprites/floral-shoppe_mono.png">Item 5</a>
-                <a href="#"><img src="assets/sprites/Folder-1.png">Item 6</a>
-                <hr style="width: 99%;height: 1px;margin: 1% 0 1%;">
-                <a href="index.html"><img src="assets/sprites/power.png">Reboot</a>
-            </div>
+        <div class="dropdown" id="startMenu">
+            <p><img src="assets/sprites/Program-1.png">Item 1</p>
+            <p><img src="assets/sprites/Folder-1.png">Item 2</p>
+            <p><img src="assets/sprites/My Computer-1.png">Item 3</p>
+            <p><img src="assets/sprites/floral-shoppe.png">Item 4</p>
+            <p><img src="assets/sprites/floral-shoppe_mono.png">Item 5</p>
+            <p><img src="assets/sprites/Folder-1.png">Item 6</p>
+            <hr style="width: 99%;height: 1px;margin: 1% 0 1%;">
+            <a href="index.html"><img src="assets/sprites/power.png">Reboot</a>
         </div>
 
         <div class="button" id="taskbar1" onclick="indent('taskbar1'); front('window1'); show('window1')">
@@ -86,7 +80,26 @@
         </div>
     </div>
 
-    <script src="scripts.js"></script>
+
+    <script src="scripts.js" type="text/javascript"></script>
+
+    <script src="loopify.js" type="text/javascript">
+        // SUpply an audio filename and a callback
+        loopify("assets/sounds/Girl.mp3", function(err, loop) {
+
+            // If something went wrong, `err` is supplied
+            if (err) {
+                return console.err(err);
+            }
+
+            // Play it whenever you want
+            loop.play();
+
+            // Stop it later if you feel like it
+            loop.stop();
+
+        });
+    </script>
 
 </body>
 
