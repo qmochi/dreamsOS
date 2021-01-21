@@ -231,6 +231,9 @@ body {
     display: none;
 }
 
+
+/* for some reason this sheet isn't up to date on Github Pages */
+
 .visible {
     display: flex;
 }
