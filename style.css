@@ -106,7 +106,7 @@ body {
 .buttonPressed {
     border-style: solid;
     border-width: var(--line-width);
-    width: 200px;
+    width: 20%;
     margin: 0.2%;
     padding: 0 0.5% 0;
     display: flex;
@@ -133,14 +133,17 @@ body {
     width: auto;
 }
 
+.button p {
+    align-self: center;
+    font-size: 10pt;
+}
+
 #start {
     width: auto;
 }
 
 #start p {
     font-weight: bolder;
-    align-self: center;
-    font-size: 10pt;
     margin-left: 10%;
 }
 
@@ -199,10 +202,6 @@ body {
     margin: -8% 5% -8% -8px
 }
 
-.show {
-    display: flex;
-}
-
 .window {
     display: none;
     position: absolute;
@@ -211,13 +210,6 @@ body {
     background: var(--gray-color);
     border-width: var(--line-width);
     border-style: solid;
-    border-top-color: var(--dark-gray);
-    border-left-color: var(--dark-gray);
-    border-bottom-color: #000000;
-    border-right-color: #000000;
-}
-
-.draggable {
     border-top-color: #ffffff;
     border-left-color: #ffffff;
     border-bottom-color: #000000;
@@ -232,6 +224,15 @@ body {
 #window2 {
     top: 12%;
     left: 18%;
+}
+
+#taskbar1,
+#taskbar2 {
+    display: none;
+}
+
+.visible {
+    display: flex;
 }
 
 @font-face {

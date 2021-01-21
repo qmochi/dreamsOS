@@ -31,6 +31,7 @@ function highlight(id) {
 function unhighlight() {
     var x = document.getElementsByClassName('icon');
     var y = document.getElementsByClassName('button');
+    var z = document.getElementById('startMenu');
     var i;
     for (i = 0; i < x.length; i++) {
         x[i].classList.remove('iconHighlighted');
@@ -39,28 +40,31 @@ function unhighlight() {
     for (o = 0; o < y.length; o++) {
         y[o].classList.remove('buttonPressed');
     }
-    document.getElementById('startMenu').classList.remove('show');
+    z.style.display = "none";
 }
 
 // makes taskbar buttons indented when clicked on
 function indent(id) {
-    document.getElementById(id).classList.toggle('buttonPressed');
-    document.getElementById('startMenu').classList.toggle('show');
-
     var icons = document.getElementsByClassName('icon');
     var i;
     for (i = 0; i < icons.length; i++) {
         icons[i].classList.remove('iconHighlighted');
     }
+    var taskbutts = document.getElementsByClassName('button');
+    var o;
+    for (o = 0; o < taskbutts.length; o++) {
+        taskbutts[o].classList.remove('buttonPressed');
+    }
+    document.getElementById(id).classList.toggle('buttonPressed');
 }
 
 // opens programs when double clicked on
 function launch(id) {
     var x = document.getElementById(id);
-    if (x.style.display === "block") {
+    if (x.style.display === "flex") {
         x.style.zIndex = 1;
     } else {
-        x.style.display = "block";
+        x.style.display = "flex";
     }
 }
 
@@ -70,12 +74,23 @@ function front(id) {
     var i;
     for (i = 0; i < x.length; i++) {
         x[i].style.zIndex = 1;
-        x[i].classList.remove('draggable');
     }
     document.getElementById(id).style.zIndex = 2;
-    document.getElementById(id).classList.add('draggable');
     document.getElementById('start').classList.remove('buttonPressed');;
-    document.getElementById('startMenu').classList.remove('show');
+    document.getElementById('startMenu').style.display = "none";
+}
+
+function show(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "flex") {
+        if (x.style.zIndex < 2) {
+            x.style.display = "none";
+        } else {
+            front(id);
+        }
+    } else {
+        x.style.display = "flex";
+    }
 }
 
 // allows for dragging windows around
@@ -125,7 +140,7 @@ function front(id) {
 //     }
 // }
 
-var dragItem = document.querySelector("#window1");
+var dragItem = document.querySelector(".window");
 var container = document.querySelector("#wallpaper");
 
 var active = false;
@@ -215,7 +230,6 @@ function showTime() {
     document.getElementById("clock").innerText = time;
 
     setTimeout(showTime, 1000);
-
 }
 
 showTime();

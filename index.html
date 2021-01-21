@@ -28,27 +28,27 @@
     <div id="wallpaper" onmousedown="unhighlight()"></div>
 
     <div id="desktop">
-        <a class="icon" id="myComputer" onmousedown="highlight('myComputer')" ondblclick="launch('window1'); front('window1')">
+        <a class="icon" id="myComputer" onmousedown="highlight('myComputer')" ondblclick="launch('window1'); front('window1'); launch('taskbar1'); indent('taskbar1')">
             <img src="assets/sprites/My Computer-1.png">
             <p>My Computer</p>
         </a>
 
-        <div class="icon" id="folder" onmousedown="highlight('folder')" ondblclick="launch('window2'); front('window2')">
+        <div class="icon" id="folder" onmousedown="highlight('folder')" ondblclick="launch('window2'); front('window2'); launch('taskbar2'); indent('taskbar2')">
             <img src="assets/sprites/Folder-1.png">
             <p>stuff</p>
         </div>
 
-        <div class="window" id="window1" onclick="front('window1')">
+        <div class="window" id="window1" onclick="front('window1'); indent('taskbar1')">
             <p>opened my computer</p>
         </div>
 
-        <div class="window" id="window2" onclick="front('window2')">
+        <div class="window" id="window2" onclick="front('window2'); indent('taskbar2')">
             <p>opened folder</p>
         </div>
     </div>
 
     <div id="taskbar">
-        <div class="button" id="start" onclick="indent('start')">
+        <div class="button" id="start" onclick="indent('start'); show('startMenu')">
             <img src="assets/sprites/Windows logo-2.png">
             <p>Start</p>
 
@@ -62,6 +62,14 @@
                 <hr style="width: 99%;height: 1px;margin: 1% 0 1%;">
                 <a href="index.html"><img src="assets/sprites/power.png">Reboot</a>
             </div>
+        </div>
+
+        <div class="button" id="taskbar1" onclick="indent('taskbar1'); front('window1'); show('window1')">
+            <p>My Computer</p>
+        </div>
+
+        <div class="button" id="taskbar2" onclick="indent('taskbar2'); front('window2'); show('window2')">
+            <p>stuff</p>
         </div>
 
         <div class="panel" onload="showTime()">
