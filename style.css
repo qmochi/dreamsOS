@@ -10,10 +10,7 @@
 body {
     width: 800px;
     height: 600px;
-    overflow-x: hidden;
-    overflow-y: hidden;
     font-family: w95;
-    font-smooth: never;
     image-rendering: pixelated;
     -webkit-font-smoothing: none;
     -moz-user-select: none;
@@ -36,7 +33,6 @@ body {
 }
 
 #load img {
-    image-rendering: pixelated;
     width: 20%;
     justify-self: center;
     align-self: center;
@@ -55,8 +51,6 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
-    overflow-y: hidden;
 }
 
 .icon,
@@ -217,6 +211,13 @@ body {
     background: var(--gray-color);
     border-width: var(--line-width);
     border-style: solid;
+    border-top-color: var(--dark-gray);
+    border-left-color: var(--dark-gray);
+    border-bottom-color: #000000;
+    border-right-color: #000000;
+}
+
+.draggable {
     border-top-color: #ffffff;
     border-left-color: #ffffff;
     border-bottom-color: #000000;
