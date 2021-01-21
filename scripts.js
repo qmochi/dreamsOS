@@ -1,16 +1,3 @@
-// // autoplays startup sound when desktop is loaded
-// function splash() {
-//     document.getElementById("load").style.display = "flex";
-//     document.getElementById("desktop").style.display = "none";
-//     document.getElementById("taskbar").style.display = "none";
-//     setTimeout(function() {
-//         document.getElementById("load").style.display = "none";
-//         document.getElementById("desktop").style.display = "flex";
-//         document.getElementById("taskbar").style.display = "flex";
-//         document.getElementById("startup").play();
-//     }, 1500);
-// };
-
 // display splash screen until audio is loaded
 function audioReady() {
     var audio = [].slice.call(document.getElementsByTagName('audio'));
@@ -24,17 +11,27 @@ function audioReady() {
 audioReady().then(loaded());
 
 function loaded() {
-    document.getElementById("load").style.display = "none";
-    document.getElementById("desktop").style.display = "flex";
-    document.getElementById("taskbar").style.display = "flex";
     var songs = document.getElementsByTagName('audio');
     var i;
     for (i = 0; i < songs.length; i++) {
-        var title = songs[i].getAttribute('id');
-        console.log(title + ".mp3 loaded!");
+        var title = songs[i].getAttribute('src');
+        console.log(title + " preloaded");
     }
-    document.getElementById("startup").play();
 }
+
+// autoplays startup sound when desktop is loaded
+function splash() {
+    document.getElementById("load").style.display = "flex";
+    document.getElementById("desktop").style.display = "none";
+    document.getElementById("taskbar").style.display = "none";
+    setTimeout(function() {
+        document.getElementById("load").style.display = "none";
+        document.getElementById("desktop").style.display = "flex";
+        document.getElementById("taskbar").style.display = "flex";
+        document.getElementById("startup").play();
+    }, 1200);
+};
+
 
 // highlights icons in blue when clicked on 
 function highlight(id) {
