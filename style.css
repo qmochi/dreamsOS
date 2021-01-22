@@ -2,7 +2,9 @@
     --bg-color: #018281;
     --gray-color: #b3acb8;
     --dark-gray: #8a8e96;
-    --highlight-color: #1ba6ac;
+    --shadow: #000000;
+    --highlight: #ffffff;
+    --selected-color: #1ba6ac;
     --vapor-gradient: linear-gradient(88deg, rgba(190, 233, 242, 1) 0%, rgba(113, 164, 210, 1) 39%, rgba(225, 83, 152, 1) 100%);
     --taskbar-height: 35px;
     --line-width: 3px;
@@ -74,7 +76,7 @@ body {
 }
 
 .iconHighlighted {
-    background: var(--highlight-color);
+    background: var(--selected-color);
     mix-blend-mode: darken;
     color: #ffffff;
 }
@@ -115,18 +117,18 @@ body {
 
 .button {
     background: var(--gray-color);
-    border-top-color: #ffffff;
-    border-left-color: #ffffff;
-    border-bottom-color: #000000;
-    border-right-color: #000000;
+    border-top-color: var(--highlight);
+    border-left-color: var(--highlight);
+    border-bottom-color: var(--shadow);
+    border-right-color: var(--shadow);
 }
 
 .buttonPressed {
     background: #e6e6e6;
-    border-top-color: #000000;
-    border-left-color: #000000;
-    border-bottom-color: #ffffff;
-    border-right-color: #ffffff;
+    border-top-color: var(--shadow);
+    border-left-color: var(--shadow);
+    border-bottom-color: var(--highlight);
+    border-right-color: var(--highlight);
 }
 
 .button img {
@@ -164,8 +166,8 @@ body {
     border-width: 2px;
     border-top-color: var(--dark-gray);
     border-left-color: var(--dark-gray);
-    border-bottom-color: #ffffff;
-    border-right-color: #ffffff;
+    border-bottom-color: var(--highlight);
+    border-right-color: var(--highlight);
     padding: 0 2% 0;
     font-size: 10pt;
 }
@@ -181,10 +183,10 @@ body {
     background-color: var(--gray-color);
     border-width: var(--line-width);
     border-style: solid;
-    border-top-color: #ffffff;
-    border-left-color: #ffffff;
-    border-bottom-color: #000000;
-    border-right-color: #000000;
+    border-top-color: var(--highlight);
+    border-left-color: var(--highlight);
+    border-bottom-color: var(--shadow);
+    border-right-color: var(--shadow);
 }
 
 .dropdown a,
@@ -198,7 +200,7 @@ body {
 
 .dropdown a:hover,
 .dropdown p:hover {
-    background: var(--highlight-color);
+    background: var(--selected-color);
     color: #ffffff;
 }
 
@@ -214,10 +216,10 @@ body {
     background: var(--gray-color);
     border-width: var(--line-width);
     border-style: solid;
-    border-top-color: #ffffff;
-    border-left-color: #ffffff;
-    border-bottom-color: #000000;
-    border-right-color: #000000;
+    border-top-color: var(--highlight);
+    border-left-color: var(--highlight);
+    border-bottom-color: var(--shadow);
+    border-right-color: var(--shadow);
 }
 
 #window1 {
