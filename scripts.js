@@ -96,10 +96,10 @@ function front(id) {
     // move this element to foreground, and others behind it
     for (var i = 0; i < x.length; i++) {
         x[i].style.zIndex = 1;
-        x[i].classList.remove("draggable");
+        x[i].classList.remove("selected");
     }
     document.getElementById(id).style.zIndex = 2;
-    document.getElementById(id).classList.add("draggable");
+    document.getElementById(id).classList.add("selected");
 
     // remove focus from other elements
     document.getElementById('start').classList.remove('buttonPressed');;
@@ -136,7 +136,7 @@ container.addEventListener("mousemove", drag, false);
 function dragStart(e) {
 
     if (e.target !== e.currentTarget) {
-        if (e.target.classList.contains("draggable")) {
+        if (e.target.classList.contains("window")) {
             active = true;
         }
 

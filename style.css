@@ -223,10 +223,6 @@ body {
     border-right-color: var(--shadow);
 }
 
-.draggable {
-    background: var(--selected-color);
-}
-
 #window1 {
     top: 5%;
     left: 12%;
@@ -240,6 +236,10 @@ body {
 #taskbar1,
 #taskbar2 {
     display: none;
+}
+
+.selected {
+    background: var(--selected-color);
 }
 
 .visible {
